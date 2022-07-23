@@ -1,0 +1,314 @@
+/*font-family: 'League Spartan', sans-serif;*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+}
+p{
+    color:hsl(0, 0%, 63%);
+    text-justify: left;
+}
+.hero-header{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    position: relative;
+    flex: 1 2 auto;
+}
+/*---Intro---*/
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  
+  .intro__heading {
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .intro__text {
+    display: inline-block;
+    transform: translateY(100%);
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.5rem;
+  }
+  .intro__text--1 {
+    color: black;
+  }
+  
+  .intro__text--2 {
+    color: black;
+    font-size: 4.5rem;
+  }
+  
+  .intro__text--3 {
+    color: lightblue;
+    font-weight: 400;
+  }
+/*---Logo---*/
+.header-logo {
+    position: absolute;
+    z-index: 2;
+    top:35px;
+    margin-left: 45%;
+    margin-right: 50%;
+}
+.logo-on{
+    opacity: 1;
+}
+.logo-off{
+    opacity: 0;
+}
+/*---Hamburger---*/
+.hamburger{
+    position: absolute;
+    height: 14px;
+    width: 20px;
+    z-index: 2;
+    top: 35px;
+    left: 25px;
+    cursor: pointer;
+}
+.hamburger-off{
+    background-image: url(images/icon-hamburger.svg);
+}
+.hamburger-open{
+    background-image: url(images/icon-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+/*---Navigation---*/
+
+.header-nav{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    height: 90px;
+    transition: all 0.5s ease;
+}
+.nav-off{
+    opacity: 0;
+    transform: translateY(-300px);
+}
+
+.nav.on{
+    opacity: 1;
+    transform: translate(0);
+}
+.header-nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header-nav-list a{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    height: 90px;
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+}
+
+/*---Imgage caroussel---*/
+.header-img-caroussel{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50vh;
+    top: 0;
+    overflow: hidden;
+}
+.caroussel-img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 1s;
+
+}
+
+header-img-caroussel-active{
+    display: initial;
+    opacity: 1;
+}
+.header-img-caroussel-inactive{
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+/*---Boutton pour silde---*/
+.header-btn-silde{
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom:0;
+    background-color:hsl(0, 0%, 0%);
+}
+.silde-btn{
+    display: block;
+    background-color: hsl(0, 0%, 0%);
+    height: 50px;
+    width: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+/*---Hero---*/
+.hero{
+    position: relative;
+}
+.hero-description{
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+    transition: opacity 0.8s;
+    opacity: 1;
+}
+h1{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.hero-description a {
+    color:hsl(0, 0%, 0%);
+    text-decoration: none;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.hero-description-transition{
+    opacity: 0;
+}
+
+/*---About---*/
+
+.about{
+    display: flex;
+    flex-direction: column;
+}
+.img-about{
+    flex:1 3 auto;
+   height: 250px;
+}
+.about-text{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+}
+.about-text-descrption{
+    padding: 30px;
+}
+.about-text-descrption h2{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+}
+
+/*---Tablette---*/
+
+@media only screen and (min-width: 768px ){
+    .hero-description{
+        height: 350px;
+        margin-top: 80px;
+        font-size: 1.2rem;
+    }
+   
+    .img-about{
+        height: 400px;
+    }
+    .about-text{
+        height: 350px;
+        font-size: 1.2rem;
+    }
+}
+
+/*---Ordinateur---*/
+
+@media only screen and (min-width:1024px){
+    .hamburger-off{
+       display: none;
+    }
+    .header-nav-list a{
+        color:white;
+    }
+    .header-nav-list{
+        justify-content: flex-start;
+        margin-left: 15%;
+        padding: 0;
+    }
+    .header-nav{
+        opacity: 1;
+        transform: translate(0); /* Afin de remettre la barre dans le champs de l'écran*/
+        background-color: initial;
+    }
+    .header-logo{
+        margin-left: 5%;
+    }
+    .hero-header{
+        height: 60vh;
+    }
+    .caroussel-img{
+        width: 60vw;
+    }
+    .header-btn-silde{
+        right: 30vw;
+    }
+    .silde-btn{
+        height: 8vh;
+        width: 5vw;
+    }
+    .hero{
+        flex: 1 1 75rem;
+        display: flex;
+        align-items: center;
+        padding-top: 0rem;
+        top: 0;
+        position: absolute;
+        width: 30vw;
+        right: 40px;
+    }
+    .hero-description{
+        padding: 0;
+        font-size: 0.8rem;
+        margin-top: 30%;
+    }
+    .about{
+        flex-direction: row;
+    }
+    .about-text{
+        height: 40vh;
+        font-size: 0.8rem;
+    }
+    .img-about{
+        width: 30%;
+        height: 40vh;
+    }
+}
